@@ -1,0 +1,23 @@
+print(f"\nWelcome to the Creative Logic Quiz, {user_name}!")
+print("Answer the following questions:")
+
+for i in question_ids:
+    print("\n" + quiz[i]['question'])
+    user_answer = input("Your answer: ").strip()
+
+    if user_answer.lower() == quiz[i]['answer'].lower():
+        print("Correct!")
+        score += 1
+    else:
+        print(f"Wrong! The correct answer is '{quiz[i]['answer']}'.")
+
+# Declare scores at the end
+print(f"\n{user_name}, your final score is {score} out of {total_questions}.")
+
+# Provide feedback based on score
+if score == total_questions:
+    print("Excellent! You got all the answers right!")
+elif score >= total_questions / 2:
+    print("Good job! You passed the quiz.")
+else:
+    print("Keep practicing! You'll get better.")
